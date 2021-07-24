@@ -2,9 +2,7 @@ package Classes;
 
 import java.util.List;
 
-import Interfaces.OperacoesGerais;
-
-public class Atleta extends CredenciadoOlimpico implements OperacoesGerais{
+public class Atleta extends CredenciadoOlimpico{
 
 	private String nome;
 	private String nacionalidade;
@@ -51,35 +49,5 @@ public class Atleta extends CredenciadoOlimpico implements OperacoesGerais{
 			return false;
 		}
 	}
-
-	@Override
-	public void adicionar() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public boolean remover() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean alterar() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean buscar() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public void listarDados() {
-		// TODO Auto-generated method stub
-		
-	}
-
+	
 }
