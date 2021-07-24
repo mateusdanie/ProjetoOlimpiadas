@@ -34,8 +34,11 @@ public class Tecnico extends CredenciadoOlimpico implements OperacoesGerais{
 
 	@Override
 	public boolean verificarCredenciais(String id) {
-		// TODO Auto-generated method stub
-		return false;
+		if(id.equals(this.getId())){
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 	@Override

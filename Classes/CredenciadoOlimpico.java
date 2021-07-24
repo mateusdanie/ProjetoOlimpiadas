@@ -1,5 +1,7 @@
 package Classes;
 
+import java.util.List;
+
 public abstract class CredenciadoOlimpico {
 	
 	private String nome;
@@ -21,5 +23,10 @@ public abstract class CredenciadoOlimpico {
 
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	public void adicionar(String nome, String nacionalidade, List<Medalha> medalhas, Equipe equipe) {
+		// TODO Auto-generated method stub
+		
 	}
 }
