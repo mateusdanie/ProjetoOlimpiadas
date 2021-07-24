@@ -2,7 +2,9 @@ package Classes;
 
 import java.util.List;
 
-public class Atleta extends CredenciadoOlimpico{
+import Interfaces.OperacoesComuns;
+
+public class Atleta extends CredenciadoOlimpico implements OperacoesComuns{
 
 	private String nome;
 	private String nacionalidade;
@@ -40,6 +42,7 @@ public class Atleta extends CredenciadoOlimpico{
 	public void setEquipe(Equipe equipe) {
 		this.equipe = equipe;
 	}
+	
 
 	@Override
 	public boolean verificarCredenciais(String id) {
@@ -49,5 +52,35 @@ public class Atleta extends CredenciadoOlimpico{
 			return false;
 		}
 	}
+	
+	@Override
+	public String toString() {
+		return "Atleta [nome=" + nome + ", nacionalidade=" + nacionalidade + ", medalhas=" + medalhas + ", equipe="
+				+ equipe + "]";
+	}
+
+	public boolean adicionarAtleta(String nome, String id, String nacionalidade,  List<Medalha> medalhas, Equipe equipe) {
+		return false;
+	}
+	
+	public boolean alterarAtleta() {
+		return false;
+	}
+	
+	@Override
+	public boolean remover(String nome) {
+		return false;
+	}
+
+	@Override
+	public String buscar(String nome) {
+		return null;
+	}
+
+	@Override
+	public void listarDados() {
+		System.out.println(this.toString());
+	}
+
 	
 }
