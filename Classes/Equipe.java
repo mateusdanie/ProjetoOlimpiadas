@@ -2,7 +2,9 @@ package Classes;
 
 import java.util.List;
 
-public class Equipe{
+import Interfaces.OperacoesComuns;
+
+public class Equipe implements OperacoesComuns{
 	
 	private String nome;
 	private String modalidade;
@@ -50,7 +52,60 @@ public class Equipe{
 		this.comissaoTecnica = comissaoTecnica;
 	}
 	
-	public int retornarQtdMedalahs() {
-		return 0;
+	public int retornarQtdMedalhas(String op) {
+		// indice 0 -  Bronze, 1 - Prata, 2 - Ouro
+		if(op.equals("Bronze") || op.equals("bronze")) {
+			return medalhas.get(0).getQuantidade();
+		}else if(op.equals("Prata") || op.equals("prata")) {
+			return medalhas.get(1).getQuantidade();
+		}else if(op.equals("Ouro") || op.equals("ouro")) {
+			return medalhas.get(2).getQuantidade();
+		}else {
+			return 0;
+		}
+	}
+	
+	@Override
+	public String toString() {
+		return "Equipe [nome=" + nome + ", modalidade=" + modalidade + ", medalhas=" + medalhas + ", atletas=" + atletas
+				+ ", comissaoTecnica=" + comissaoTecnica + "]";
+	}
+
+	public boolean adicionarEquipe(String nome, String modalidade, List<Medalha> medalhas, List<Atleta> atletas, List<Tecnico> comissaoTecnica) {
+		return false;
+	}
+	
+	public boolean alterarEquipe() {
+		return false;
+	}
+	
+	@Override
+	public boolean remover(String nome) {
+		if(nome.equals(this.getNome())) {
+			medalhas.clear();
+			atletas.clear();
+			comissaoTecnica.clear();
+			this.setModalidade(null);
+			this.setNome(null);
+			return true;
+		}else {
+			return false;
+		}
+	}
+
+	@Override
+	public String buscar(String nome) {
+		if(nome.equals(this.getNome())) {
+			listarDados();
+			return nome + " foi encontrado!!!";
+		}else {
+			return "Não foi encontrado!!!";
+		}
+		
+	}
+
+	@Override
+	public void listarDados() {
+		System.out.println(this.toString());
 	}
 }
