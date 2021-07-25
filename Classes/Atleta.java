@@ -60,6 +60,7 @@ public class Atleta extends CredenciadoOlimpico implements OperacoesComuns{
 	}
 
 	public boolean adicionarAtleta(String nome, String id, String nacionalidade,  List<Medalha> medalhas, Equipe equipe) {
+		
 		return false;
 	}
 	
@@ -69,12 +70,28 @@ public class Atleta extends CredenciadoOlimpico implements OperacoesComuns{
 	
 	@Override
 	public boolean remover(String nome) {
-		return false;
+		if(nome.equals(this.getNome())) {
+			
+			this.setNome(null);
+			this.setId(null);
+			this.medalhas.clear();
+			this.equipe.remover(nome);
+			System.out.println("Dados Excluídos Com Sucesso!!!");
+			return true;
+		}else {
+			System.out.println("Atleta Inserido Não Foi Encontrado!!!");
+			return false;
+		}	
 	}
 
 	@Override
 	public String buscar(String nome) {
-		return null;
+		if(nome.equals(this.getNome())){
+			this.listarDados();
+			return nome + "encontrado, dados acima";
+		}else {
+			return "Os dados de " + nome + " não foram encontrado!!!";
+		}
 	}
 
 	@Override
