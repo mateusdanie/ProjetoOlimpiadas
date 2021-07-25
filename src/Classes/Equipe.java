@@ -106,7 +106,7 @@ public class Equipe implements OperacoesComuns {
 			listarDados();
 			return nome + "encontrado, dados acima";
 		} else {
-			return "Os dados de " + nome + " não foram encontrado!!!";
+			return "Os dados de " + nome + " não foram encontrados!!!";
 		}
 
 	}
